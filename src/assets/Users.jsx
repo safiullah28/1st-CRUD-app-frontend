@@ -13,7 +13,7 @@ const Users = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001")
+      .get("https://1st-crud-app-backend-production.up.railway.app/getUsers")
       .then((result) => {
         setUser(result.data);
       })
@@ -24,7 +24,7 @@ const Users = () => {
 
   const handleDelete = (id) => {
     axios
-      .delete("http://localhost:3001/deleteUser/" + id)
+      .delete("http://localhost:9000/deleteUser/" + id)
       .then((result) => {
         console.log(result);
         window.location.reload(true);

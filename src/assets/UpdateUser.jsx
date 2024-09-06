@@ -12,7 +12,15 @@ const UpdateUser = () => {
   const Update = (e) => {
     e.preventDefault();
     axios
-      .put("http://localhost:3001/updateUser/" + id, { name, email, age })
+      .put(
+        "https://1st-crud-app-backend-production.up.railway.app/updateUser/" +
+          id,
+        {
+          name,
+          email,
+          age,
+        }
+      )
       .then((result) => {
         console.log(result);
         navigate("/");
@@ -24,7 +32,10 @@ const UpdateUser = () => {
 
   useEffect(() => {
     axios
-      .get("http://localhost:3001/getUser/" + id, { name, email, age })
+      .get(
+        "https://1st-crud-app-backend-production.up.railway.app/getUser/" + id,
+        { name, email, age }
+      )
       .then((result) => {
         console.log(result);
       })
